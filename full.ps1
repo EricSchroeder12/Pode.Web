@@ -1,9 +1,8 @@
-Import-Module Pode -MaximumVersion 2.99.99 -Force
-Import-Module ..\src\Pode.Web.psd1 -Force
+Import-Module -Name Pode, Pode.Web
 
 Start-PodeServer -StatusPageExceptions Show {
     # add a simple endpoint
-    Add-PodeEndpoint -Address * -Port 8090 -Protocol Http
+    Add-PodeEndpoint -Address 0.0.0.0 -Port 8090 -Protocol Http
     New-PodeLoggingMethod -Terminal | Enable-PodeErrorLogging
 
 
