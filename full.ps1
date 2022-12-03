@@ -284,7 +284,7 @@ Start-PodeServer -StatusPageExceptions Show {
         }
     }
 
-    Add-PodeStaticRoute -Path '/download' -Source '.\storage' -DownloadOnly
+   # Add-PodeStaticRoute -Path '/download' -Source '.\storage' -DownloadOnly
 
     $table | Add-PodeWebTableButton -Name 'Excel' -Icon 'chart-bar' -ScriptBlock {
         $path = Join-Path (Get-PodeServerPath) '.\storage\test.csv'
